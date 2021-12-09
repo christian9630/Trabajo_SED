@@ -1,4 +1,0 @@
-Time resolution is 1 ps
-Failure: Simulacion superada. Test finalizado. 
-Time: 600 ns  Iteration: 0  Process: /Timer_tb/tb  File: C:/Users/judit/OneDrive/Escritorio/cosas varias john/Vending_Machine_SED_VHDL/Vending_Machine_SED_VHDL.srcs/sim_1/new/timer_tb.vhd
-$finish called at time : 600 ns : File "C:/Users/judit/OneDrive/Escritorio/cosas varias john/Vending_Machine_SED_VHDL/Vending_Machine_SED_VHDL.srcs/sim_1/new/timer_tb.vhd" Line 84
