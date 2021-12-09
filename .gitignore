@@ -119,3 +119,5 @@ Vending_Machine_SED_VHDL/Vending_Machine_SED_VHDL.sim/sim_1/behav/xsim/webtalk.l
 Vending_Machine_SED_VHDL/Vending_Machine_SED_VHDL.sim/sim_1/behav/xsim/webtalk_13720.backup.jou
 Vending_Machine_SED_VHDL/Vending_Machine_SED_VHDL.sim/sim_1/behav/xsim/webtalk_8900.backup.jou
 Vending_Machine_SED_VHDL/vivado.jou
+*.jou
+*.log
