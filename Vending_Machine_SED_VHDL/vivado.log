@@ -2,10 +2,10 @@
 # Vivado v2021.1 (64-bit)
 # SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
 # IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
-# Start of session at: Thu Dec  9 17:16:25 2021
-# Process ID: 9768
+# Start of session at: Thu Dec  9 17:30:16 2021
+# Process ID: 1476
 # Current directory: C:/Users/judit/OneDrive/Escritorio/cosas varias john/Trabajo_SED/Vending_Machine_SED_VHDL
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2468 C:\Users\judit\OneDrive\Escritorio\cosas varias john\Trabajo_SED\Vending_Machine_SED_VHDL\Vending_Machine_SED_VHDL.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3368 C:\Users\judit\OneDrive\Escritorio\cosas varias john\Trabajo_SED\Vending_Machine_SED_VHDL\Vending_Machine_SED_VHDL.xpr
 # Log file: C:/Users/judit/OneDrive/Escritorio/cosas varias john/Trabajo_SED/Vending_Machine_SED_VHDL/vivado.log
 # Journal file: C:/Users/judit/OneDrive/Escritorio/cosas varias john/Trabajo_SED/Vending_Machine_SED_VHDL\vivado.jou
 #-----------------------------------------------------------
@@ -20,5 +20,5 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2021.1/data/ip'.
-open_project: Time (s): cpu = 00:00:24 ; elapsed = 00:00:09 . Memory (MB): peak = 1137.688 ; gain = 0.000
+open_project: Time (s): cpu = 00:00:21 ; elapsed = 00:00:08 . Memory (MB): peak = 1135.422 ; gain = 0.000
 update_compile_order -fileset sources_1
