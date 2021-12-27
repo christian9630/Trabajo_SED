@@ -44,7 +44,7 @@ begin
 
         -- Stimuli
         FOR i in 0 to 15 LOOP
-        wait for 100*TbPeriod;
+        wait for 1000000*TbPeriod; -- es necesario simular 160 milisegundos para verlo bien
         code <= code + 1;
         end LOOP;
         
