@@ -140,7 +140,7 @@ begin
         report "funcionamiento incorrecto. "
         severity failure;
         count_counter <= "00000";
-        wait for 18*TbPeriod;
+        wait for 8*TbPeriod;
         
         
         -- Stop the clock and hence terminate the simulation
