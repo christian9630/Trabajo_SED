@@ -54,9 +54,7 @@ begin
             end case;
     end process;
     
-    output_decod : process (current_state, clk) -- Ponemos clk, para enviar señales
-                                                -- como el reset, durante un ciclo
-                                                -- solamente, y para que se actualice 
+    output_decod : process (current_state, clk) -- Ponemos clk, para que se actualice 
                                                 -- la cuenta según cambia. 
     begin
     --ponemos a cero las salidas
