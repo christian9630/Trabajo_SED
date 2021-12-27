@@ -19,7 +19,7 @@ architecture Behavioral of decoder_tb is
     signal display         : std_logic_vector (6 downto 0);
     signal current_display : std_logic_vector (7 downto 0);
 
-    constant TbPeriod : time := 1000 ns;
+    constant TbPeriod : time := 10 ns;
     signal TbClock : std_logic := '0';
     signal TbSimEnded : std_logic := '0';
 
