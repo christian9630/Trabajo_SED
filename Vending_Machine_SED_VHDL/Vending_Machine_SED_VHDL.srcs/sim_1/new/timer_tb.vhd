@@ -12,13 +12,13 @@ architecture Behavioral of Timer_tb is
             reset : in std_logic;
             start : in std_logic;
             data : in integer;
-            counter : buffer integer;
+            count : out integer;
             done : out std_logic
     );
     end component;
  
 signal clk, start, reset, done : std_logic;
-signal data, counter : integer;
+signal data, count : integer; -- counter : integer;
 
 constant TbPeriod : time := 10 ns; -- periodo de clk
 signal TbClock : std_logic := '0';
@@ -30,7 +30,7 @@ begin
         reset => reset,
         start => start, 
         data => data,
-        counter => counter,
+        count => count,
         done => done
         );
    
@@ -46,10 +46,10 @@ begin
         start <= '1'; data <= 9;
         --49999999 es medio segundo; data = 299999999 para 3 segundos
         -- tiempo deseado = (data+1)/frecuencia
-        wait for TbPeriod;
+        wait for 2*TbPeriod;
         start <= '0'; 
         
-        assert counter = data
+        assert count = data
         report "funcionamiento incorrecto. "
         severity failure;
         
@@ -64,7 +64,7 @@ begin
         reset <= '1';
         wait for 9*TbPeriod;
         
-        assert counter = 0
+        assert count = 0
         report "funcionamiento incorrecto. "
         severity failure;
         

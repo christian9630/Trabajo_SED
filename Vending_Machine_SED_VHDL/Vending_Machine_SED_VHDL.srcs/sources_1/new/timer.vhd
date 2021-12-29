@@ -7,6 +7,7 @@ entity Timer is
         reset : in std_logic;
         start : in std_logic;
         data : in integer;
+        count : out integer;
         done : out std_logic
      );
 end Timer;
@@ -56,5 +57,6 @@ begin
         when s3 => done <= '1'; --estado cumplido 
         when others => done <= '0'; counter <= 0;
     end case;
+    count <= counter;
 end process;
 end Behavioral;
