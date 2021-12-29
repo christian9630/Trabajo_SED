@@ -7,7 +7,6 @@ entity Timer is
         reset : in std_logic;
         start : in std_logic;
         data : in integer;
-        counter : buffer integer;
         done : out std_logic
      );
 end Timer;
@@ -15,6 +14,7 @@ end Timer;
 architecture Behavioral of Timer is
     type state is (s0, s1, s2, s3);
     signal current_state, next_state : state;
+    signal counter : integer;
     
 begin
 
