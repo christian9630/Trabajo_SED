@@ -2,14 +2,14 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
-entity Decoder is
+entity decoder is
 port(
-    CLK : in std_logic;
+    clk : in std_logic;
     code : in std_logic_vector(3 downto 0);
     display : out std_logic_vector(6 downto 0);
     current_display : out std_logic_vector(7 downto 0)
 );
-end Decoder;
+end decoder;
 
 architecture Behavioral of Decoder is
 

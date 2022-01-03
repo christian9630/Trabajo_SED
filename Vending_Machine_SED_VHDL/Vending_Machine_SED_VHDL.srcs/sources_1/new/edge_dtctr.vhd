@@ -10,15 +10,17 @@ entity edgedtctr is
         sync_bt20_in : in std_logic;
         sync_bt50_in : in std_logic;
         sync_bt100_in : in std_logic;
+        sync_cancel_in : in std_logic;
         edge_bt10 : out std_logic;
         edge_bt20 : out std_logic;
         edge_bt50 : out std_logic;
-        edge_bt100 : out std_logic
+        edge_bt100 : out std_logic;
+        edge_cancel : out std_logic
     );
 end edgedtctr;
 
 architecture Behavioral of edgedtctr is
-signal sreg10, sreg20, sreg50, sreg100 : std_logic_vector(2 downto 0);
+signal sreg10, sreg20, sreg50, sreg100, sregcanc : std_logic_vector(2 downto 0);
 begin
 process(clk)
 begin
@@ -27,6 +29,7 @@ begin
         sreg20 <= sreg20(1 downto 0) & sync_bt20_in;
         sreg50 <= sreg50(1 downto 0) & sync_bt50_in;
         sreg100 <= sreg100(1 downto 0) & sync_bt100_in;
+        sregcanc <= sregcanc(1 downto 0) & sync_cancel_in;
     end if;
 end process;
 
@@ -41,6 +44,9 @@ with sreg50 select
     '0' when others;
 with sreg100 select 
     edge_bt100 <= '1' when "100",
+    '0' when others;
+with sregcanc select
+    edge_cancel <= '1' when "100",
     '0' when others;
 end Behavioral;
 

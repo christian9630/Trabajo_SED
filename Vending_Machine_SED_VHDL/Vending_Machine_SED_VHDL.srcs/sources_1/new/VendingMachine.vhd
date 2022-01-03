@@ -23,10 +23,12 @@ architecture Behavioral of VendingMachine is
             async_bt20 : in std_logic;
             async_bt50 : in std_logic;
             async_bt100 : in std_logic;
+            async_cancel : in std_logic;
             sync_bt10_out : out std_logic;
             sync_bt20_out : out std_logic;
             sync_bt50_out : out std_logic;
-            sync_bt100_out : out std_logic
+            sync_bt100_out : out std_logic;
+            sync_cancel_out : out std_logic
 		);
 	END COMPONENT;
 
@@ -37,10 +39,12 @@ architecture Behavioral of VendingMachine is
             sync_bt20_in : in std_logic;
             sync_bt50_in : in std_logic;
             sync_bt100_in : in std_logic;
+            sync_cancel_in : in std_logic;
             edge_bt10 : out std_logic;
             edge_bt20 : out std_logic;
             edge_bt50 : out std_logic;
-            edge_bt100 : out std_logic
+            edge_bt100 : out std_logic;
+            edge_cancel : out std_logic
 		);
 	END COMPONENT;
 
@@ -144,8 +148,8 @@ architecture Behavioral of VendingMachine is
 		);
 	END COMPONENT;
 
-	signal SYNC_IN: std_logic_vector(3 downto 0);
-	signal COIN_IN: std_logic_vector(3 downto 0);
+	signal sync_in: std_logic_vector(4 downto 0);
+	signal edge_out: std_logic_vector(4 downto 0);
 
 	signal reset_timer: std_logic;
 	signal start_timer: std_logic;
@@ -175,56 +179,60 @@ architecture Behavioral of VendingMachine is
 begin
 	
 	Inst_sync: synchrnzr PORT MAP(
-		clk => CLK,
-		async_bt10 => BUTTON(0),
-            	async_bt20 => BUTTON(1),
-            	async_bt50 => BUTTON(2),
-            	async_bt100 => BUTTON(3),
-            	sync_bt10_out => sync_in(0),
-            	sync_bt20_out => sync_in(1),
-            	sync_bt50_out => sync_in(2),
-            	sync_bt100_out => sync_in(3)
+		  clk => CLK,
+		  async_bt10 => BUTTON(0),
+          async_bt20 => BUTTON(1),
+          async_bt50 => BUTTON(2),
+          async_bt100 => BUTTON(3),
+          async_cancel => BUTTON(4),
+          sync_bt10_out => sync_in(0),
+          sync_bt20_out => sync_in(1),
+          sync_bt50_out => sync_in(2),
+          sync_bt100_out => sync_in(3),
+          sync_cancel_out => sync_in(4)
 	);
 
 
 	Inst_edgedtctr: edgedtctr PORT MAP( 
-		clk => CLK,
-        	sync_bt10_in => sync_in(0),
-        	sync_bt20_in => sync_in(1),
-        	sync_bt50_in => sync_in(2),
-        	sync_bt100_in => sync_in(3),
-        	edge_bt10 => coin_in(0),
-        	edge_bt20 => coin_in(1),
-        	edge_bt50 => coin_in(2),
-        	edge_bt100 => coin_in(3)
+		  clk => CLK,
+          sync_bt10_in => sync_in(0),
+          sync_bt20_in => sync_in(1),
+          sync_bt50_in => sync_in(2),
+          sync_bt100_in => sync_in(3),
+          sync_cancel_in => sync_in(4), 
+          edge_bt10 => edge_out(0),
+          edge_bt20 => edge_out(1),
+          edge_bt50 => edge_out(2),
+          edge_bt100 => edge_out(3),
+          edge_cancel => edge_out(4)
 	);
 
 	Inst_timer: timer PORT MAP(
-		clk => CLK,
-        	reset => reset_timer,
-        	start => start_timer,
-        	data => data_timer,
-        	--count => count_timer,
-        	done => done_timer
+		  clk => CLK,
+          reset => reset_timer,
+          start => start_timer,
+          data => data_timer,
+          --count => count_timer,
+          done => done_timer
 	);
 
 	Inst_fsm1: s1fsm PORT MAP(
-		clk => CLK,
-    		reset => reset_s1,
-    		start => start_s1,
-    		coin_100 => coin_s1(3),
-    		coin_50 => coin_s1(2),
-    		coin_20 => coin_s1(1),
-    		coin_10 => coin_s1(0),
-    		count_counter => count_counter,
-    		error => error_s1,
-    		done => done_s1,
-    		code => code_s1,
-    		reset_counter => reset_counter,
-    		coin_100_counter => coin_counter(3),
-    		coin_50_counter => coin_counter(2),
-    		coin_20_counter => coin_counter(1),
-    		coin_10_counter => coin_counter(0)
+		  clk => CLK,
+    	  reset => reset_s1,
+    	  start => start_s1,
+    	  coin_100 => coin_s1(3),
+    	  coin_50 => coin_s1(2),
+    	  coin_20 => coin_s1(1),
+    	  coin_10 => coin_s1(0),
+    	  count_counter => count_counter,
+    	  error => error_s1,
+    	  done => done_s1,
+    	  code => code_s1,
+    	  reset_counter => reset_counter,
+    	  coin_100_counter => coin_counter(3),
+    	  coin_50_counter => coin_counter(2),
+    	  coin_20_counter => coin_counter(1),
+    	  coin_10_counter => coin_counter(0)
 	);
 
 	Inst_fsm2: s2fsm PORT MAP(
@@ -237,13 +245,13 @@ begin
 	);
 
 	Inst_counter: counter PORT MAP(
-		clk => CLK,
-    		reset => reset_counter,
-    		add_100 => coin_counter(3),
-    		add_50 => coin_counter(2),
-    		add_20 => coin_counter(1),
-    		add_10 => coin_counter(0),
-    		count => count_counter
+		  clk => CLK,
+    	  reset => reset_counter,
+    	  add_100 => coin_counter(3),
+    	  add_50 => coin_counter(2),
+    	  add_20 => coin_counter(1),
+    	  add_10 => coin_counter(0),
+    	  count => count_counter
 	);
 
 	Inst_decoder: decoder PORT MAP(
@@ -256,11 +264,11 @@ begin
 	Inst_mainfsm: mainfsm PORT MAP(
 		    clk => CLK,
     		reset => RST,
-    		cancel_in => BUTTON(4),
-    		button_10_in => coin_in(0),
-    		button_20_in => coin_in(1),
-    		button_50_in => coin_in(2),
-    		button_100_in => coin_in(3),
+    		cancel_in => edge_out(4),
+    		button_10_in => edge_out(0),
+    		button_20_in => edge_out(1),
+    		button_50_in => edge_out(2),
+    		button_100_in => edge_out(3),
     		switches_in => SW,
     		code_s1_in => code_s1,
     		done_s1_in => done_s1,
