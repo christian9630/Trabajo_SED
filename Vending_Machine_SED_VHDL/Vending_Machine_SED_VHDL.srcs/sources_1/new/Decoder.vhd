@@ -359,7 +359,7 @@ case code is
     when "1110"=>
         case display_sel is 
             when "11111110" => 
-                display <= "00000100"; 
+                display <= "0000010"; 
             when "11111101" => 
                 display <= "1110001";
             when "11111011" => 
@@ -371,7 +371,7 @@ case code is
             when "11011111" => 
                 display <= "0000010";
             when "10111111" => 
-                display <= "01100010";
+                display <= "0110001";
             when "01111111" => 
                 display <= "1111010"; 
             when others =>
