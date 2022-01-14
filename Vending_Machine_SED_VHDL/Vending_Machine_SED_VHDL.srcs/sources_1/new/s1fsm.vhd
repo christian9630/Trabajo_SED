@@ -63,7 +63,10 @@ begin
     coin_50_counter <= '0';  coin_20_counter <= '0';
     coin_10_counter <= '0';
     case current_state is 
-                when s0 =>
+                when s0 => coin_100_counter <= coin_100; -- Se han añadido estas líneas
+                           coin_50_counter <= coin_50;   -- para que se cuente la primera
+                           coin_20_counter <= coin_20;   -- moneda.
+                           coin_10_counter <= coin_10;
                 when s0b => reset_counter <= '0';
                 when s1 => code <= count_counter(3 downto 0); -- 5 bits a 4 bits, como se asigna?
                            coin_100_counter <= coin_100;

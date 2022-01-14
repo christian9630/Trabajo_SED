@@ -63,25 +63,49 @@ begin
 	BUTTON <= "00010";	-- Se suma 20 céntimos
 	wait for 2ms;
 	BUTTON <= "00000"; 
-	wait for 10 ms;
+	wait for 10ms;
 	
 	BUTTON <= "00100";	-- Se suma 50 céntimos
-	wait for 100 * TbPeriod;
+	wait for 2ms;
+	BUTTON <= "00000";
+	wait for 10ms;
+	
 	BUTTON <= "01000";	-- Se suma 1 euro para ver que pasa cuando se desborda la cantidad introducida
-	wait for 5000ms;		-- Se espera 5 segundos ya que para que pase al estado inicial se necesitan 3 segundos
+	wait for 2ms;
+	BUTTON <= "00000";
+	--wait for 3100ms;    -- Se espera 3,1 segundos ya que para que pase al estado inicial se necesitan 3 segundos
+	wait for 34ms; -- 3 segundos era mucho tiempo para simular. Se cambia por 30 ms el tiempo
+	               -- de espera, solo para la simulación.
+	               
 	BUTTON <= "01000"; 	-- Se vuelve a introducir 1 euro
-	wait for 100 * TbPeriod;
+	wait for 2ms;
+	BUTTON <= "00000";
+	wait for 10ms;
+	
 	SW <= "0010";		-- Se selecciona un producto
-	wait for 5000ms;		-- Se esperan 5 segundos para que vuelva al estado inicial
+	--wait for 3100ms;	-- Se esperan 3,1 segundos para que vuelva al estado inicial
+	wait for 34ms; -- Espera de 31 ms
+	SW <= "0000";
+	
 	BUTTON <= "00100";	-- Se vuelve a introducir 50 céntimos
-	wait for 100 * TbPeriod;
+	wait for 2ms;
+	BUTTON <= "00000";
+	wait for 10ms;
+	
 	BUTTON <= "10000";	-- Se presiona el botón de cancelar
-	wait for 5000ms;		-- Se esperan 5 segundo para que vuelva al estado inicial
+	wait for 2 ms;
+	BUTTON <= "00000";
+	--wait for 3100ms;		-- Se esperan 3,1 segundos para que vuelva al estado inicial
+	wait for 34 ms; -- Espera de 31 ms
+	
 	BUTTON <= "00010";	-- Se introducen 20 céntimos
-	wait for 100 * TbPeriod;
+	wait for 2ms;
+	BUTTON <= "00000";
+	wait for 10 ms;
 	RST <= '0';		-- Se resetea la máquina
-	wait for 100 * TbPeriod;
+	wait for 2ms;
 	RST <= '1';
+	wait for 10ms;
 
         -- Stop the clock and hence terminate the simulation
         TbSimEnded <= '1';

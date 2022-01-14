@@ -92,7 +92,10 @@ begin
     reset_s2_out <= '1'; start_s2_out <= '0'; selection_s2_out <= "0000";
     reset_timer_out <= '1'; start_timer_out <= '0'; data_timer_out <= 0; 
     case current_state is 
-        when s0 =>
+        when s0 => coin_10_s1_out <= button_10_in; -- Se han añadido estas líneas
+                   coin_20_s1_out <= button_20_in; -- para que se cuente la primera
+                   coin_50_s1_out <= button_50_in; -- moneda. 
+                   coin_100_s1_out <= button_100_in;
         when s0b => reset_timer_out <= '0'; 
                     reset_s1_out <= '0';
                     reset_s2_out <= '0';
@@ -102,23 +105,26 @@ begin
                    coin_50_s1_out <= button_50_in;
                    coin_100_s1_out <= button_100_in; 
                    code_display_out <= code_s1_in;
-        when s2 => start_s2_out <= '0';
+        when s2 => start_s2_out <= '1';
                    code_display_out <= "1011";
                    selection_s2_out <= switches_in;
                    product <= productslctr_s2_in;
         when s3 => code_display_out <= "1100";
                    error_out <= '1';
                    recover_out <= '1';
-                   data_timer_out <= 299999999; 
+                   data_timer_out <= 299999999;
+                   --data_timer_out <= 2999999; --solo para simulación
                    start_timer_out <= '1';
         when s4 => code_display_out <= "1101";
                    product_out <= product;
                    sold_out <= '1';
                    data_timer_out <= 299999999; 
+                   --data_timer_out <= 2999999; -- solo para simulación
                    start_timer_out <= '1';
         when s5 => code_display_out <= "1110";
                    recover_out <= '1';
                    data_timer_out <= 299999999; 
+                   --data_timer_out <= 2999999; --solo para simulación
                    start_timer_out <= '1';
         when others => 
         end case;
