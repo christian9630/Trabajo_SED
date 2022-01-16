@@ -18,7 +18,7 @@ architecture Behavioral of s2fsm is
     signal next_state : states;
 begin
 
-    state_register : process (reset, clk)
+    state_register : process (reset, clk) -- Proceso para el reset de la máquina de estados y el cambio de estado con el pulso de reloj
     begin 
         if reset = '0' then
             current_state <= s0;
@@ -27,7 +27,7 @@ begin
         end if;
     end process;
     
-    nextstate_decod : process (start, selection, current_state)
+    nextstate_decod : process (start, selection, current_state) -- Proceso que define las condiciones de cambio de estado
     begin
         next_state <= current_state;
             case current_state is
@@ -61,7 +61,7 @@ begin
             end case;
     end process;
     
-    output_decod : process (current_state, clk)
+    output_decod : process (current_state, clk) --Proceso que define las salidas en función del estado actual
                                                 
                                                 
                                                  
