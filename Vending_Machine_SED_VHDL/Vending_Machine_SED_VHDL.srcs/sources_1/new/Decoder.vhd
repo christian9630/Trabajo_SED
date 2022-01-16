@@ -13,16 +13,16 @@ end decoder;
 
 architecture Behavioral of Decoder is
 
-    constant max_refresh_count: INTEGER := 100000; 
-    signal refresh_count: INTEGER range 0 to max_refresh_count;
-    signal refresh_state: STD_LOGIC_VECTOR(2 downto 0) := (others => '0');
-    signal display_sel: STD_LOGIC_VECTOR(7 downto 0) := (others => '0');
+    constant max_refresh_count: INTEGER := 100000; -- Constante que define el máximo a contar
+    signal refresh_count: INTEGER range 0 to max_refresh_count; -- Entero que se usa para hacer la cuenta
+    signal refresh_state: STD_LOGIC_VECTOR(2 downto 0) := (others => '0'); -- Según el valor de la señal el display seleccionado cambia
+    signal display_sel: STD_LOGIC_VECTOR(7 downto 0) := (others => '0');  -- Señal que nos indica que displays estan activos
     
 begin
 
 current_display <= display_sel;
 
-gen_clock: process(clk)
+gen_clock: process(clk) -- Proceso que nos genera una ilusión óptica para poder poner un dígito o una letra diferente en cada display 
 
 begin
   
@@ -36,7 +36,7 @@ begin
     end if; 
 end process;
     
-show_display: process(refresh_state, code)
+show_display: process(refresh_state, code) -- Proceso por el cuál en función del valor de refresh_state se elige el display y se muestra el mensaje
  
 begin
 
@@ -62,7 +62,7 @@ case refresh_state is
 end case;
 
 case code is
-    when "0000"=> -- 
+    when "0000"=> -- Inserte
         case display_sel is 
             when "11111110" => 
                 display <= "1110000"; 
@@ -83,7 +83,7 @@ case code is
             when others =>
                 display <= "1111111"; 
         end case;
-    when "0001"=>
+    when "0001"=> -- 10 cent
         case display_sel is 
             when "11111110" => 
                 display <= "1101010"; 
@@ -104,7 +104,7 @@ case code is
             when others =>
                 display <= "1111111"; 
         end case;
-    when "0010"=>
+    when "0010"=> -- 20 cent
         case display_sel is 
             when "11111110" => 
                 display <= "1101010"; 
@@ -125,7 +125,7 @@ case code is
             when others =>
                 display <= "1111111";  
         end case;
-    when "0011"=>
+    when "0011"=> -- 30 cent
         case display_sel is 
             when "11111110" => 
                 display <= "1101010"; 
@@ -146,7 +146,7 @@ case code is
             when others =>
                 display <= "1111111";
         end case;
-    when "0100"=>
+    when "0100"=> -- 40 cent
         case display_sel is 
             when "11111110" => 
                 display <= "1101010"; 
@@ -167,7 +167,7 @@ case code is
             when others =>
                 display <= "1111111"; 
         end case;
-    when "0101"=>
+    when "0101"=> -- 50 cent
         case display_sel is 
             when "11111110" => 
                 display <= "1101010"; 
@@ -188,7 +188,7 @@ case code is
             when others =>
                 display <= "1111111";  
         end case;
-    when "0110"=>
+    when "0110"=> -- 60 cent
         case display_sel is 
             when "11111110" => 
                 display <= "1101010"; 
@@ -209,7 +209,7 @@ case code is
             when others =>
                 display <= "1111111";  
         end case;
-    when "0111"=>
+    when "0111"=> -- 70 cent
         case display_sel is 
             when "11111110" => 
                 display <= "1101010"; 
@@ -230,7 +230,7 @@ case code is
             when others =>
                 display <= "1111111";  
         end case;
-    when "1000"=>
+    when "1000"=> -- 80 cent
         case display_sel is 
             when "11111110" => 
                 display <= "1101010"; 
@@ -251,7 +251,7 @@ case code is
             when others =>
                 display <= "1111111";  
         end case;
-    when "1001"=>
+    when "1001"=> -- 90 cent
         case display_sel is 
             when "11111110" => 
                 display <= "1101010"; 
@@ -272,7 +272,7 @@ case code is
             when others =>
                 display <= "1111111";   
         end case;
-    when "1010"=>
+    when "1010"=> -- 100 cent
         case display_sel is 
             when "11111110" => 
                 display <= "1101010"; 
@@ -293,7 +293,7 @@ case code is
             when others =>
                 display <= "1111111"; 
         end case;
-    when "1011"=>
+    when "1011"=> -- Elija pr
         case display_sel is 
             when "11111110" => 
                 display <= "0011000"; 
@@ -314,7 +314,7 @@ case code is
             when others =>
                 display <= "1111111"; 
         end case;
-    when "1100"=>
+    when "1100"=> -- Error
         case display_sel is 
             when "11111110" => 
                 display <= "1100010"; 
@@ -335,7 +335,7 @@ case code is
             when others =>
                 display <= "1111111"; 
         end case;
-    when "1101"=>
+    when "1101"=> -- Gracias
         case display_sel is 
             when "11111110" => 
                 display <= "0000010"; 
@@ -356,7 +356,7 @@ case code is
             when others =>
                 display <= "1111111"; 
         end case;
-    when "1110"=>
+    when "1110"=> -- Cancelar
         case display_sel is 
             when "11111110" => 
                 display <= "0000010"; 
@@ -377,7 +377,7 @@ case code is
             when others =>
                 display <= "1111111"; 
         end case;
-    when others=>
+    when others=> -- No func(por si el código de entrada falla)
         case display_sel is 
             when "11111110" => 
                 display <= "1101010"; 
