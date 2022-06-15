@@ -112,19 +112,19 @@ begin
         when s3 => code_display_out <= "1100";
                    error_out <= '1';
                    recover_out <= '1';
-                   data_timer_out <= 299999999;
-                   --data_timer_out <= 2999999; --solo para simulación
+                   --data_timer_out <= 299999;
+                   --data_timer_out <= 2999; --solo para simulación
                    start_timer_out <= '1';
         when s4 => code_display_out <= "1101";
                    product_out <= product;
                    sold_out <= '1';
-                   data_timer_out <= 299999999; 
-                   --data_timer_out <= 2999999; -- solo para simulación
+                   --data_timer_out <= 299999; 
+                   --data_timer_out <= 2999; -- solo para simulación
                    start_timer_out <= '1';
         when s5 => code_display_out <= "1110";
                    recover_out <= '1';
-                   data_timer_out <= 299999999; 
-                   --data_timer_out <= 2999999; --solo para simulación
+                   --data_timer_out <= 299999; 
+                   --data_timer_out <= 2999; --solo para simulación
                    start_timer_out <= '1';
         when others => 
         end case;

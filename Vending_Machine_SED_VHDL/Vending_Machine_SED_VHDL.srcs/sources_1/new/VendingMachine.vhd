@@ -16,6 +16,14 @@ end VendingMachine;
 
 architecture Behavioral of VendingMachine is
 
+    COMPONENT clk100kHz 
+        port (
+            entrada: in  std_logic;
+            reset  : in  std_logic;
+            salida : out std_logic
+        );
+    END COMPONENT;
+
 	COMPONENT synchrnzr
 		port (
 			clk : in std_logic;
@@ -51,10 +59,10 @@ architecture Behavioral of VendingMachine is
 	COMPONENT timer 
 		port(
 			clk : in std_logic;
+            working : in std_logic;
             reset : in std_logic;
-            start : in std_logic;
-            data : in integer;
-            count : out integer;
+            ---data : in integer;
+            ---count : out integer;
             done : out std_logic
 		);
 	END COMPONENT;
@@ -148,6 +156,8 @@ architecture Behavioral of VendingMachine is
 		);
 	END COMPONENT;
 
+    signal clk100k : std_logic;
+    
 	signal sync_in: std_logic_vector(4 downto 0);
 	signal edge_out: std_logic_vector(4 downto 0);
 
@@ -178,8 +188,16 @@ architecture Behavioral of VendingMachine is
 
 begin
 	
+	Inst_clk100k : clk100kHz PORT MAP (
+	      entrada => CLK,
+	      reset => RST,
+	      salida => clk100k
+	);
+	
+	
 	Inst_sync: synchrnzr PORT MAP(
-		  clk => CLK,
+		  clk => clk100k,
+		  --clk =>clk,
 		  async_bt10 => BUTTON(0),
           async_bt20 => BUTTON(1),
           async_bt50 => BUTTON(2),
@@ -194,7 +212,8 @@ begin
 
 
 	Inst_edgedtctr: edgedtctr PORT MAP( 
-		  clk => CLK,
+		  clk => clk100k,
+		  --clk => clk,
           sync_bt10_in => sync_in(0),
           sync_bt20_in => sync_in(1),
           sync_bt50_in => sync_in(2),
@@ -208,16 +227,16 @@ begin
 	);
 
 	Inst_timer: timer PORT MAP(
-		  clk => CLK,
+		  clk => clk100k,
+		  --clk => clk,
+          working => start_timer,
           reset => reset_timer,
-          start => start_timer,
-          data => data_timer,
-          --count => count_timer,
           done => done_timer
 	);
 
 	Inst_fsm1: s1fsm PORT MAP(
-		  clk => CLK,
+		  clk => clk100k,
+		  --clk => clk,
     	  reset => reset_s1,
     	  start => start_s1,
     	  coin_100 => coin_s1(3),
@@ -236,7 +255,8 @@ begin
 	);
 
 	Inst_fsm2: s2fsm PORT MAP(
-		clk => CLK,
+		clk => clk100k,
+		 --clk => clk,
     	reset => reset_s2,
     	start => start_s2,
    		selection => selection_s2,
@@ -245,7 +265,8 @@ begin
 	);
 
 	Inst_counter: counter PORT MAP(
-		  clk => CLK,
+		  clk => clk100k,
+		  --clk =>  clk,
     	  reset => reset_counter,
     	  add_100 => coin_counter(3),
     	  add_50 => coin_counter(2),
@@ -255,14 +276,16 @@ begin
 	);
 
 	Inst_decoder: decoder PORT MAP(
-		    clk => CLK,
+		    clk => clk100k,
+		    --clk=>clk,
    		    code => code_decoder,
     		display => SEGMENT,
     		current_display => AN
 	);
 
 	Inst_mainfsm: mainfsm PORT MAP(
-		    clk => CLK,
+		    clk => clk100k,
+		    --clk => clk,
     		reset => RST,
     		cancel_in => edge_out(4),
     		button_10_in => edge_out(0),
