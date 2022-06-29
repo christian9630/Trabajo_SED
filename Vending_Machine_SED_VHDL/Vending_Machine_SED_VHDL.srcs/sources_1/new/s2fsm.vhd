@@ -72,19 +72,19 @@ begin
     case current_state is 
                 when s0 =>
                     done <= '0';
-                when s1 =>
+                when s1 => productslctr <= selection;
                 when s2 =>
                     done <= '1';
-                    productslctr <= "0001";
+                    productslctr <= selection;
                 when s3 => 
                     done <= '1';
-                    productslctr <= "0010";
+                    productslctr <= selection;
                 when s4 =>  
                     done <= '1';
-                    productslctr <= "0100";
+                    productslctr <= selection;
                 when s5 =>
                     done <= '1';
-                    productslctr <= "1000";
+                    productslctr <= selection;
                 when others => 
             end case;
     end process;

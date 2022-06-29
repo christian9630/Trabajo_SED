@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1656542947">
+  <File Type="ROUTE-PWR" Name="VendingMachine_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="VendingMachine.tcl"/>
+  <File Type="BITSTR-MMI" Name="VendingMachine.mmi"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="VendingMachine_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="VendingMachine_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="VendingMachine_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="VendingMachine_reports.tcl"/>
+  <File Type="OPT-TIMING" Name="VendingMachine_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="VendingMachine_opt.dcp"/>
+  <File Type="OPT-DRC" Name="VendingMachine_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="VendingMachine.hwdef"/>
+  <File Type="PWROPT-DCP" Name="VendingMachine_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="VendingMachine_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="VendingMachine_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="VendingMachine_placed.dcp"/>
+  <File Type="PLACE-IO" Name="VendingMachine_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="VendingMachine_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="VendingMachine_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="VendingMachine_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="VendingMachine_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="VendingMachine_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="VendingMachine_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BIN" Name="VendingMachine.bin"/>
+  <File Type="PLACE-TIMING" Name="VendingMachine_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="VendingMachine_postplace_pwropt.dcp"/>
+  <File Type="BITSTR-MSK" Name="VendingMachine.msk"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="VendingMachine_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="VendingMachine_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="VendingMachine_drc_physopted.rpt"/>
+  <File Type="BITSTR-RBT" Name="VendingMachine.rbt"/>
+  <File Type="PHYSOPT-TIMING" Name="VendingMachine_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="VendingMachine_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="VendingMachine_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="VendingMachine_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="VendingMachine_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="VendingMachine_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="VendingMachine_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="VendingMachine_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="VendingMachine_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="VendingMachine_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="VendingMachine_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="VendingMachine_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="VendingMachine_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="VendingMachine_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="VendingMachine_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="VendingMachine_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="VendingMachine_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="VendingMachine_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="VendingMachine_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="VendingMachine_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="VendingMachine_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="VendingMachine_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="VendingMachine_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="VendingMachine_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="VendingMachine_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="VendingMachine_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="VendingMachine_bus_skew_postroute_physopted.rpt"/>
+  <File Type="BG-BIT" Name="VendingMachine.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="VendingMachine_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="VendingMachine_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-NKY" Name="VendingMachine.nky"/>
+  <File Type="BITSTR-BMM" Name="VendingMachine_bd.bmm"/>
+  <File Type="PDI-FILE" Name="VendingMachine.pdi"/>
+  <File Type="RCFI_FILE" Name="VendingMachine.rcfi"/>
+  <File Type="CFI_FILE" Name="VendingMachine.cfi"/>
+  <File Type="RNPI_FILE" Name="VendingMachine.rnpi"/>
+  <File Type="NPI_FILE" Name="VendingMachine.npi"/>
+  <File Type="RBD_FILE" Name="VendingMachine.rbd"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="VendingMachine.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="VendingMachine.sysdef"/>
+  <File Type="BG-BGN" Name="VendingMachine.bgn"/>
+  <File Type="BG-DRC" Name="VendingMachine.drc"/>
+  <File Type="RDI-RDI" Name="VendingMachine.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/Decoder.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/clk100kHz.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/counter.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/edge_dtctr.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/mainfsm.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/s1fsm.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/s2fsm.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/synchrnzr.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/timer.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/VendingMachine.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="VendingMachine"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/digilent-xdc-master/Nexys-4-DDR-Master.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../Proyecto0/Proyecto0.srcs/constrs_1/imports/digilent-xdc-master/Nexys-4-DDR-Master.xdc"/>
+        <Attr Name="ImportTime" Val="1628606178"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2021"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>
